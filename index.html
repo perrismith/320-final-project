@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Final Project (1)</title>
+<title>FinalProject</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -18818,8 +18818,8 @@ Source: <a href="http://harvardsportsanalysis.org/2018/10/wanna-make-money-in-th
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There is still one factor we haven't paid sufficient attention to: overfitting. It is unwise to generalize our finding with such a limited dataset to be indicative of player salary within the NBA as a whole. Admittely, even though we are facing some constraints like a relatively small dataset to work with in general, splitting up our data into a "training" and "testing" set, a common practice involving machine learning / regression to limit bias, will provide us with more confidence in our model.</p>
-<p>TO DO: EXPLAIN A BIT MORE ABOUT WHY MACHINE LEARNING / SPLITTING DATASET IS RELEVANT AND HOW IT WORKS</p>
-<p>We will now use machine learning techniques in order to predict player salaries (in standardized fashion) based on our calculated score that we manually created (through assigning weights to key metrics). It is important to divide your dataset appropriately regarding how much you use for training and how much you use for actually testing your results Because our dataset is already really small (we only used Centers for the 2017-2018 season), we decided to use 65% of the data for training our model, and 35% for actually testing our results.</p>
+<p>We will now use machine learning techniques in order to predict player salaries (in standardized fashion) based on our calculated score that we manually created (through assigning weights to key metrics). It is important to divide your dataset appropriately regarding how much you use for training and how much you use for actually testing your results.</p>
+<p>How can we determine how much of our data should be used for "training" purposes and how much should be used for "testing" purposes? There is no universal optimal train-test-split ratio and it is dependent on the size of your dataset and the number of adjustable parameters. Some suggest following the <a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle</a>, a simple 80/20 split. However, the problem of determining the train-test ratio is being studied by reseachers. <a href= "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.1337&rep=rep1&type=pdf">This article</a> suggests the following: "The fraction of patterns reserved for the validation set should be inversely proportional to the square root of the number of free adjustable parameters." Using this formula, we can state that since we have 6 adjustable parameters( weights associated with PER, DWS, DRB%, OWS, ORB%, and 3PAr) we get the following for a potential testing percentage: 0.40824829046. However this formula is not a guarantee of best results. We started tesing our data with a 40% testing and 60% training split. In order to determine what worked best for our dataset we manually altered the ratio until finding the ratio that gave us our greatest accuracy rating. We were able to find an ideal ratio for our dataset: 65% of the data for training our model, and 35% for actually testing our results. This ended up actually being fairly close to our predicted train-test split that we calulated from the research article.</p>
 <p>First, we again create a target, with our feature being our calc_score metric.</p>
 
 </div>
